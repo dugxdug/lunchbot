@@ -1,0 +1,8 @@
+@import '../scss/variables';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.navbar-toggleable-md {
+  // box-shadow: $navbar-box-shadow;
+  min-height: 50px;
+}
