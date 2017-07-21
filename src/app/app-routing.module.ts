@@ -6,7 +6,14 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: MainComponent,
+    // add comoponents that will load inside main
+    children: [
+      {
+        path: '',
+        loadChildren: 'app/search/search.module#SearchModule'
+      }
+    ]
   }
 ];
 
