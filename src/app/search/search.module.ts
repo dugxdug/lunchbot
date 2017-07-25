@@ -6,14 +6,17 @@ import { AgmCoreModule } from '@agm/core';
 import { SearchComponent } from './search.component';
 import { SearchRoutingModule } from './search-routing.module';
 
+const googleMapsParams = {
+  apiKey: 'AIzaSyB2_PEkwGTS1sAVOdzvXXp9KKSHRGKTidk',
+  libraries: ['places'],
+};
+
 @NgModule({
   imports : [
     CommonModule,
     FormsModule,
     SearchRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB2_PEkwGTS1sAVOdzvXXp9KKSHRGKTidk'
-    })
+    AgmCoreModule.forRoot(googleMapsParams)
   ],
   declarations: [SearchComponent]
 })
