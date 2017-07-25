@@ -1,5 +1,5 @@
 <div class="input-group input-group-lg px-3 py-3">
-  <input type="text" class="form-control search" [(ngModel)]="searchTerm" (keyup.enter)="locationSearch()"
+  <input type="text" id="autocompleteInput" class="form-control search" [(ngModel)]="searchTerm" (keyup.enter)="locationSearch()"
   placeholder="Where are you?">
   <span class="input-group-btn">
     <button class="btn btn-secondary" type="button" (click)="applyFilters()">

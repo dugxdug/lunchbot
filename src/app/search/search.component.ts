@@ -1,6 +1,8 @@
 import { Component, OnInit, NgZone, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { MapsAPILoader } from '@agm/core';
+
+declare var google: any;
 
 @Component({
   selector: 'app-search',
@@ -16,12 +18,14 @@ export class SearchComponent implements OnInit {
   // directionsService = new google.maps.DirectionsService();
   // radius: any;
 
-  title = 'My first AGM project';
+  // google maps zoom level
+  zoom = 8;
+
+  // initial center position for the map
   lat = 35.775194;
   lng = -78.647124;
 
   searchTerm = '';
-  google: any;
   markers = [];
 
   constructor(private _mapsAPILoader: MapsAPILoader, private _zone: NgZone) { }
@@ -33,8 +37,8 @@ export class SearchComponent implements OnInit {
 
   autocomplete() {
   this._mapsAPILoader.load().then(() => {
-    const autocomplete = new this.google.maps.places.Autocomplete(document.getElementById('autocompleteInput'), {});
-    this.google.maps.event.addListener(this.autocomplete, 'place_changed', () => {
+    const autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocompleteInput'), {});
+    google.maps.event.addListener(autocomplete, 'place_changed', () => {
       this._zone.run(() => {
         const place = autocomplete.getPlace();
 
