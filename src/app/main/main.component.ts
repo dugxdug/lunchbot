@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  logoUrl = '../assets/logo.png';
 
   constructor() { }
 

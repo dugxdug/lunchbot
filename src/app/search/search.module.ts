@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 import { SearchComponent } from './search.component';
 import { SearchRoutingModule } from './search-routing.module';
@@ -9,7 +10,10 @@ import { SearchRoutingModule } from './search-routing.module';
   imports : [
     CommonModule,
     FormsModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB2_PEkwGTS1sAVOdzvXXp9KKSHRGKTidk'
+    })
   ],
   declarations: [SearchComponent]
 })
