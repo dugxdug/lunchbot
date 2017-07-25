@@ -20,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "../node_modules/font-awesome/scss/font-awesome.scss",
+        "scss/styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
